@@ -2,7 +2,9 @@ CREATE TABLE IF NOT EXISTS departments (
     id SERIAL PRIMARY KEY,
     company_id INT NOT NULL REFERENCES companies(id),
     department_name VARCHAR(100) NOT NULL,
-    created_at TIMESTAMP DEFAULT NOW()
+    created_at TIMESTAMP DEFAULT NOW(),
+    created_by INT REFERENCES users(id)
+
 );
 
 CREATE TABLE IF NOT EXISTS teams (
